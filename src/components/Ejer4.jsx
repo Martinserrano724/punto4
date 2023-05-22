@@ -9,9 +9,13 @@ const Ejer4 = () => {
 const [tarea,setTarea] = useState('');
 const [tareaArray,setTareaArray]=useState([]);
 
-function cargaTarea(){
+function handleSubmit(){
   setTareaArray([...tareaArray,tarea]);
  setTarea('');
+  }
+  const eliminarTarea =(nombreFiltrado)=>{
+    let tareasFiltradas=tareaArray.filter((itemTarea)=>itemTarea!=nombreFiltrado)
+    setTareaArray(tareasFiltradas);
   }
  
   function onSubmit(e){e.preventDefault();}
@@ -24,11 +28,11 @@ function cargaTarea(){
          value={tarea}
            />
             </Form.Group>
-            <Button className="btn btn-secondary" type="button" onClick={()=>cargaTarea()} >
+            <Button className="btn btn-secondary" type="button" onClick={()=>handleSubmit()} >
             Enviar Tarea
             </Button>
         </Form> 
-        <ListaTarea tareas={tareaArray}></ListaTarea>
+        <ListaTarea tareas={tareaArray} eliminar={eliminarTarea}></ListaTarea>
     </div>
     );
 };
