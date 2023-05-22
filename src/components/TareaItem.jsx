@@ -1,9 +1,9 @@
 import React from 'react';
-
-const TareaItem = () => {
+import ListGroup from 'react-bootstrap/ListGroup';
+const TareaItem = ({tarea}) => {
     return (
-        <div>
-            
+        <div >
+            <ListGroup.Item className='d-flex justify-content-between' >{tarea} <button className='btn btn-danger'>Borrar</button></ListGroup.Item>
         </div>
     );
 };
