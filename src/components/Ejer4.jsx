@@ -9,8 +9,9 @@ const Ejer4 = () => {
   const [tareaArray, setTareaArray] = useState([]);
 
   function handleSubmit() {
+    if(tarea!=''){
     setTareaArray([...tareaArray, tarea]);
-    setTarea("");
+    setTarea("");}
   }
   const eliminarTarea = (nombreFiltrado) => {
     let tareasFiltradas = tareaArray.filter(
