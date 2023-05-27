@@ -3,8 +3,8 @@ import ListGroup from 'react-bootstrap/ListGroup';
 const TareaItem = ({tarea,eliminar}) => {
     
     return (
-        <div >
-            <ListGroup.Item className='d-flex justify-content-between' onClick={()=>eliminar(tarea)}>{tarea} <button className='btn btn-danger'>Borrar</button></ListGroup.Item>
+        <div className='d-flex flex-row mt-3 '>
+            <ListGroup.Item className='w-100 d-flex justify-content-between overflow-auto me-3 ' >{tarea}</ListGroup.Item> <button className='btn btn-danger' onClick={()=>eliminar(tarea)}>Borrar</button>
         </div>
     );
 };
